@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+        <div>
+            <div class="container-lista-noticia">
+
+                <h1 class="titulo-seccion-noticias">NOTICIAS</h1>
+
+                <p id="bajada-noticias" class="text-center" >Todas las noticias del ambito local, nacional e internacional. Información de competencias y torneos. Temporadas de entrenamiento con calendario anual. Tambien los ultimos avances a nivel cientifico </p>
+
+                <div class="container-noticias-listado">
+                    <form class="d-flex p-4" role="search" th:action="@{/noticia/busqueda}">
+                        <input class="form-control me-2" type="search" placeholder="Buscar noticia" aria-label="Search" name="query">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                    <h2 id="resultados-titulo">Resultados:</h2>
+                    <div class="row row-cols-sm-5 row-cols-md-2 g-3" id="contenedor-cards" th:if="${noticias.size}">
+                        <div class="col"  th:each="noticia : ${noticias}">
+                            <div class="card-deck">
+                                <div th:replace= "/fragments/noticia_card :: div" </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:unless="${noticias.size}" class="busqueda-vacia">
+                    <h2 id="resultados-nulos">NO HAY RESULTADOS</h2>
+                </div>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

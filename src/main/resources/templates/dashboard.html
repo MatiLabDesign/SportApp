@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+        <div class="container-flex-administrador">
+            <div class="container" id="contenedor-administracion">
+                <div class="row row-cols-sm-5 row-cols-md-2 g-3">
+                    <div class="cards-dashboard">
+                        <div id="contenedores-cards-usuarios">
+                            <h2 class="Titulo-administracion-Usuarios">Entrenamientos</h2>
+                            <p class="parrafo-dashboard-usuarios">
+                                Ver lista completa de entrenamientos subidos
+                            </p>
+                            <a th:href="@{/admin/entrenamientos}">
+                                <button class="btn" id="boton-dashboard-usuarios" type="button">
+                                    Ver tabla
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cards-dashboard">
+                        <div id="contenedores-cards-noticias">
+                            <h2 class="Titulo-administracion-Noticias">Noticias</h2>
+                            <p class="parrafo-dashboard-noticias">
+                                Ver lista completa de noticias cargadas
+                            </p>
+                            <a th:href="@{/admin/noticias}">
+                                <button class="btn" id="boton-dashboard-noticias" type="button">
+                                    Ver tabla
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="row row-cols-sm-5 row-cols-md-1 g-3"
+                    id="contenedores-inferior-entrenamiento"
+                    >
+                    <div class="cards-dashboard">
+                        <div id="contenedores-cards-entrenamientos">
+                            <h2 class="Titulo-administracion-Entrenamientos">
+                                Usuarios
+                            </h2>
+                            <p class="parrafo-dashboard-entrenamientos">
+                                Ver lista completa de profesores y atletas registrados
+                            </p>
+                            <div class="btn">
+                                <a th:href="@{/admin/profesores}" >
+                                    <button
+                                        class="btn"
+                                        id="boton-dashboard-entrenamientos"
+                                        type="button"
+                                        >
+                                        Ver Profesores
+                                    </button>
+                                </a>
+                                <a th:href="@{/admin/usuarios}" >
+                                    <button
+                                        class="btn"
+                                        id="boton-dashboard-entrenamientos"
+                                        type="button"
+                                        >
+                                        Ver Atletas
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

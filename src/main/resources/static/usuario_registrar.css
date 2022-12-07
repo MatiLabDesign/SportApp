@@ -1,0 +1,52 @@
+.container-flex-usuario{
+    height: calc(100% + 50px);
+    background-position: center;
+    background-size: cover;
+
+
+    background-image: url(https://images.ole.com.ar/2022/08/16/Gouvi-Mh7_2000x1500__1.jpg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+.container-flex-usuario::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+.formulario-usuario{
+    width: 850px;
+    height: calc(100% + 50px);
+    margin: 20px;
+    background-color: rgba(145, 35, 35, 0.2);
+    border-radius:25px;
+}
+
+.usuario-label{
+    margin-left: 20px;
+}
+
+
+#archivo-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-archivo-usuario{
+    margin-left: 210px; 
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" th:href="${noticia.css}" th:inline="css"/>
+
+        <title>Noticias</title>
+    </head>
+    <body>
+        <h2>Noticias</h2>
+        <div class="container-flex">
+            <div class="noticia">
+                <div class="noticia-card">
+                    <img th:src="@{noticias.id}"/>
+                </div>
+                <div class="noticia-contenido">
+                    <span class="noticia-fecha" th:text="${noticias.alta}"></span>
+                    <h3 class="noticia-titulo" th:text="${noticias.titulo}">
+                    </h3>
+                    <span class="noticia-bajada" th:text="${noticias.cuerpo}"
+                    ></span
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

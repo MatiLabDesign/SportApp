@@ -1,0 +1,41 @@
+<html>
+    <head th:replace= "/fragments/head :: head" </head>
+    <body>
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+
+        <div class="container-flex-entrenamiento-lista">
+            <div class="table-responsive-emtrenamiento">
+                <h2 class="titulo-lista">LISTA DE ENTRENAMIENTOS</h2>
+                <hr>
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th id="titulos-listas" scope="col">Entrenamiento</th>
+                            <th id="titulos-listas" scope="col">Disciplina</th>
+                            <th id="titulos-listas" scope="col">Inicio</th>
+                            <th id="titulos-listas" scope="col">Fin</th>
+                            <th id="titulos-listas" scope="col"></th>
+                            <th id="titulos-listas-acciones" scope="col">Acciones</th>
+                            <th id="titulos-listas" scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="linea-lista" th:each="entrenamiento : ${entrenamiento}">
+                        <tr >
+                            <td id="contenido-lista" th:text="${entrenamiento.descripcion}"></td>
+                            <td id="contenido-lista" th:text="${entrenamiento.disciplina}"></td>
+                            <td id="contenido-lista" th:text="${entrenamiento.fechaInicio}"></td>
+                            <td id="contenido-lista" th:text="${entrenamiento.fechaFin}"></td>
+                            <td id="lista-links-tabla"><a class="links-lista" th:href="@{/entrenamiento/completa/__${entrenamiento.id}__}">Ver</a></td>
+                            <td id="lista-links-tabla"><a class="links-lista-editar" th:href="@{/entrenamiento/editar/__${entrenamiento.id}__}">Editar</a></td>
+                            <td id="lista-links-tabla"><a class="links-lista-eliminar" onclick="return confirm('¿Estás seguro que deseas eliminar el entrenamiento?');" th:href="@{/entrenamiento/borrar/__${entrenamiento.id}__}">Eliminar</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

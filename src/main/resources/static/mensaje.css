@@ -1,0 +1,31 @@
+.contenedor-mensaje {
+    margin: 0;
+    background-color: #55ba48;
+}
+
+
+.mensaje-exito-titulo, .mensaje-error-titulo{
+    color: #fff;
+    font-size: 40px;
+}
+
+
+.mensaje-exito, #mensajeError{
+    color: #fff;
+    font-size: 25px;
+    width: 750px;
+    margin-top: 20px;
+}
+
+.error {
+    background-color: #ED5E68;
+    color:#fff;
+    text-align: center;
+}
+
+
+.exito {
+    background-color: #55ba48;
+    color: #fff;
+    text-align: center;
+}

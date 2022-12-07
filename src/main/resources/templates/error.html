@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace= "/fragments/head :: head" </head>
+    <body>
+
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+
+       <section class="contenedorErrores">
+            <div class="titulos">
+                <h3 class="mensajeError" th:text=" ' Error ' + ${codigo}"></h3>
+                <p class="mensajeError" th:text="${mensaje}"></p>
+            </div>
+            <section class="container">
+                <div class="divVolver">
+                    <a href="javascript:history.back()">
+                        <button type=" button" class="boton-volver-noticia" id="botonError">
+                            Volver Atrás
+                        </button>
+                    </a>
+                </div>
+
+            </section>
+
+        </section>
+        <!-- Footer -->
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+
+    </body>
+</html>

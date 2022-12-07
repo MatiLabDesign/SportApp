@@ -1,0 +1,39 @@
+<html>
+    <head th:replace= "/fragments/head :: head" </head>
+    <body>
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+        <div class="container-flex-entrenamiento-lista">
+            <div class="table-responsive-emtrenamiento"  >
+                <div>
+                    <h2 class="titulo-lista">LISTA DE NOTICIAS</h2>
+                    <hr>
+                    <table class="table table-striped table-sm" >
+                        <thead>
+                            <tr>
+                                <th id="titulos-listas" scope="col">Titulo</th>
+                                <th id="titulos-listas" scope="col">ID</th>
+                                <th id="titulos-listas" scope="col">Fecha Publicacion</th>
+                                <th id="titulos-listas" scope="col"></th>
+                                <th id="titulos-listas-acciones" scope="col">Acciones</th>
+                                <th id="titulos-listas" scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="linea-lista" th:each="noticia : ${noticia}">
+                            <tr>
+                                <td id="contenido-lista" th:text="${noticia.titulo}"></td>
+                                <td id="contenido-lista" th:text="${noticia.id}"></td>
+                                <td id="contenido-lista" th:text="${noticia.fechaPublicacion}"></td>
+                                <td id="lista-links-tabla"><a class="links-lista" th:href="@{/noticia/completa/__${noticia.id}__}">Ver</a></td>
+                                <td id="lista-links-tabla"><a class="links-lista-editar" th:href="@{/noticia/editar/__${noticia.id}__}">Editar</a></td>
+                                <td id="lista-links-tabla"><a class="links-lista-eliminar" onclick="return confirm('¿Estás seguro que deseas eliminar la noticia?');" th:href="@{/noticia/borrar/__${noticia.id}__}">Eliminar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

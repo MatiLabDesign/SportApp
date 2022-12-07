@@ -1,0 +1,153 @@
+.container-flex-noticia{
+    height: calc(100% + 50px);
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://soriatletismo.com/fotografias/politecnico1.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    /* text-align: center; */
+}
+.container-flex-noticia::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+.formulario{
+    width: 850px;
+   height: calc(100% + 50px);
+    margin: 20px;
+    /* border: solid 1px; */
+    background-color: rgba(145, 35, 35, 0.2);
+    border-radius:25px;
+    content-visibility: auto;
+
+}
+
+.titulo-seccion{
+    margin-top: 20px;
+}
+
+.formulario h2{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 800; 
+    color: #55ba48;
+} 
+
+
+.titulo{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+
+    margin: auto;
+
+    flex-direction: column;
+}
+
+.titulo-input{
+    border-radius: 15px;
+    height:40px;
+    padding: 0 15px;
+    margin-top: 15px;
+    border: none;
+    box-shadow: 3px 3px 4px rgba(68, 68, 68, 0.5),
+        inset 3px 3px 4px rgba(76, 76, 76, 0.4),
+        inset -3px -3px 4px rgba(76, 76, 76, 0.4);
+}
+.subtitulo{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    flex-direction: column;
+}
+.subtitulo-input{
+    border-radius: 15px;
+    height:40px;
+    padding: 0 15px;
+    margin-top: 15px;
+
+    border: none;
+    box-shadow: 3px 3px 4px rgba(68, 68, 68, 0.5),
+        inset 3px 3px 4px rgba(76, 76, 76, 0.4),
+        inset -3px -3px 4px rgba(76, 76, 76, 0.4);
+}
+.cuerpo{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+.cuerpo-noticia{
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-top: 15px;
+    border: none;
+    box-shadow: 3px 3px 4px rgba(68, 68, 68, 0.5),
+        inset 3px 3px 4px rgba(76, 76, 76, 0.4),
+        inset -3px -3px 4px rgba(76, 76, 76, 0.4); 
+    /* background-color: rgba(255, 255, 255, 0.211); */
+}
+
+.form-label{
+    margin-left: 20px;
+}
+.archivo{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.label-archivo{
+    margin-right: 240px;
+}
+
+.btn-div{
+    display: flex;
+    justify-content:center;
+    padding: 10px;
+}
+
+
+#boton{
+    border-radius:10px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color:#17447D;
+    color: #fff;
+    border: none;
+}
+#boton:hover{
+    border-radius:10px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color:#123865;
+    /* box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5),
+    -2px -2px 15px rgba(255, 255, 255, 0.5) ; */
+    border: none;
+
+}
+
+/*.input-archivo{
+    background-color: #55ba48;
+}*/

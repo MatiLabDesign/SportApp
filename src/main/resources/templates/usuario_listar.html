@@ -1,0 +1,40 @@
+<html>
+    <head th:replace= "/fragments/head :: head" </head>
+    <body>
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+
+        <div class="container-flex-entrenamiento-lista">
+            <div class="table-responsive-emtrenamiento">
+                <h2 class="titulo-lista">LISTA DE ATLETAS</h2>
+                <hr>
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th id="titulos-listas" scope="col">Nombre</th>
+                            <th id="titulos-listas" scope="col">Mail</th>
+                            <th id="titulos-listas" scope="col">Disciplina</th>
+                            <th id="titulos-listas-acciones" scope="col">Rol</th>
+                            <th id="titulos-listas" scope="col"></th>
+                            <th id="titulos-listas-acciones" scope="col">Acciones</th>
+                            <th id="titulos-listas" scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="linea-lista" th:each="usuario : ${usuario}">
+                        <tr >
+                            <td id="contenido-lista" th:text="${usuario.nombre}"></td>
+                            <td id="contenido-lista" th:text="${usuario.email}"></td>
+                            <td id="contenido-lista" th:text="${usuario.disciplina}"></td>
+                            <td id="lista-links-tabla"><a class="links-lista-rol" th:href="@{/admin/modificarRol/__${usuario.id}__}">Cambiar</a></td>
+                            <td id="lista-links-tabla"><a class="links-lista" th:href="@{/perfil/__${usuario.id}__}">Ver</a></td>
+                            <td id="lista-links-tabla"><a class="links-lista-editar" th:href="@{/admin/modificarUsuario/__${usuario.id}__}">Editar</a></td>
+                            <td id="lista-links-tabla"><a class="links-lista-eliminar" onclick="return confirm('¿Estás seguro que deseas eliminar el atleta?');" th:href="@{/perfil/__${usuario.id}__}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

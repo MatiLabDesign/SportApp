@@ -1,0 +1,84 @@
+.container-flex-entrenamiento-lista{
+    height: calc(100% + 75px);
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://lanetademexico.mx/campeche/wp-content/uploads/sites/9/2022/03/campeche-img_622edd3692f3f-1.jpg);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.container-flex-entrenamiento-lista::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+.table-responsive-emtrenamiento{
+    width: 1200px;
+    height: 650px;
+    background-color:  rgba(0,0,0,0.5);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px;
+}
+
+.titulo-lista{
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 700;
+}
+
+#titulos-listas{
+    color: #fff;
+}
+#titulos-listas-acciones{
+    color: #b8b9bb;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.links-lista{
+    text-decoration: none;
+    color: #2a71c9;
+    font-weight: 700;
+}
+
+.links-lista-editar{
+    text-decoration: none;
+    color: #55ba48;
+    font-weight: 700;
+}
+
+.links-lista-eliminar{
+    text-decoration: none;
+    color: #ED5E68 ;
+    font-weight: 700;
+}
+
+.links-lista:hover, .links-lista-editar:hover, .links-lista-eliminar:hover{
+    color: #b8b9bb;
+}
+
+#lista-links-tabla{
+    text-align: center;
+}
+
+#contenido-lista {
+    color: #b8b9bb;
+}
+
+.linea-lista {
+    color: #fff;
+}

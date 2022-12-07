@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+
+        <div>
+            <nav th:replace="/fragments/nav :: nav" </nav>
+        </div>
+        <section class="container-flex-entrenamiento">
+            <div class="formulario-entrenamiento">
+                <div th:if="${error != null}" id="mensajeError"  class="card text-white bg-danger mb-3 mensajeError">
+                    <div class="card-body">
+                        <h5 class="card-title">ERROR</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <h2 class="titulo-seccion">CARGAR ENTRENAMIENTO</h2>
+                <form th:action="@{/entrenamiento/guardada}" method="POST" enctype="multipart/form-data" id="formu">
+                    <div class="subtitulo">
+                        <label for="disciplina" class="subtitulo-label" >Seleccione la disciplina</label>
+                        <select name="disciplina" class="subtitulo-input">
+                            <option hidden selected>Selecciona una disciplina</option>
+                            <option value="Carrera">Carrera</option>
+                            <option value="Lanzamiento">Lanzamiento</option>
+                            <option value="Salto">Salto</option>
+                        </select>
+                    </div>
+
+
+                    <div class="subtitulo">
+                        <label for="profesores" class="subtitulo-label" >Seleccione un entrenador</label>
+                        <select name="idProfesor" class="subtitulo-input" >
+                            <option>
+                                Selecciona un entrenador
+                            <option th:each="profesores : ${profesores}"
+                                    th:value="${profesores.id}"
+                                    th:text="${profesores.nombre}"
+                                    />
+                        </select>
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Ingrese la descripcion</label>
+                        <input type="text" class="subtitulo-input" name="descripcion"
+                               placeholder="Resumen de la rutina" th:value="${descripcion}" />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Ingrese la rutina</label>
+                        <textarea style="resize: none" name="rutina" class="cuerpo-noticia" placeholder="Detalle de la rutina" rows="8" th:text="${rutina}"></textarea>
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Ingrese fecha de inicio de la rutina</label>
+                        <input type="date" class="subtitulo-input" name="fechaInicio" />
+                    </div>
+
+                    <div class="btn-div">
+                        <button type="submit" class="btn" id="boton-entrenamiento">
+                            SUBIR
+                        </button>
+                        <a href="javascript:document.getElementById('formu').reset();">
+                            <button type="reset" class="btn" id="boton-entrenamiento">
+                                RESETEAR
+                            </button>
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer th:replace="/fragments/footer :: footer" </footer>
+    </body>
+</html>
+

@@ -1,0 +1,39 @@
+
+<div class="card" id="card-entrenamiento" >
+    <div class="card-body">
+        <h6 id="titulo-card-entrenamiento"class="disciplina-card text-center fw-bold" th:text="${entrenamiento.disciplina}"></h6>
+        <p id="subtitulo-card-entrenamiento"class="descripcion-card text-center  " th:text="${entrenamiento.descripcion}"></p>
+    </div>
+    <div class="card-footer">
+        <small class="fecha-card">Inicio: </small>
+        <small class="fecha-card" th:text="${entrenamiento.fechaInicio}"></small>
+        <small class="fecha-card"> / </small>
+        <small class="fecha-card ">Fin: </small>
+        <small class="fecha-card" th:text="${entrenamiento.fechaFin}"></small>
+    </div>
+    <div class="d-flex justify-content-center">
+
+        <div class="btn-group">
+            <a th:href="@{/entrenamiento/completa/__${entrenamiento.id}__}"
+               >
+                <button type="button" class="btn-sm" id="btn-ver">
+                    Ver Rutina
+                </button>
+            </a>
+            <a th:if="${session.usuarioActivo != null}"
+               sec:authorize="hasRole('ADMIN')"
+               th:href="@{/entrenamiento/editar/__${entrenamiento.id}__}">
+                <button type="button" class="btn-sm" id="btn-editar">
+                    Editar
+                </button>
+            </a>
+            <a th:if="${session.usuarioActivo != null}"
+               th:href="@{/entrenamiento/borrar/__${entrenamiento.id}__}"
+               sec:authorize="hasRole('ADMIN')" >
+                <button type="button" class="btn-sm"id="btn-eliminar">
+                    Eliminar
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

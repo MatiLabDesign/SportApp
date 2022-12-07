@@ -1,0 +1,21 @@
+<div>
+    <footer class="footer">
+        <ul class="navbar-items nav">
+            <li><a href="/" class="footer-item">Inicio</a></li>
+            <li><a th:href="@{/noticia/listar}" class="footer-item">Noticias</a></li>
+            <li><a th:href="@{/registrar}" th:if="${session.usuarioActivo == null}" class="footer-item">Asociate</a></li>
+            <li><a th:href="@{/login}" th:if="${session.usuarioActivo == null}" class="footer-item">Ingresá</a></li>
+            <li><a th:href="@{/entrenamiento/listar}" th:if="${session.usuarioActivo != null}" class="footer-item">Entrenamientos</a></li>
+            <li><a th:href="@{/admin/dashboard}" th:if="${session.usuarioActivo != null}" sec:authorize="hasRole('ADMIN')" class="footer-item">DashBoard</a></li>
+        </ul>
+        <hr class="footer-linea" />
+
+        <div class="footer-copy-contenidos">
+            <div class="contenedor-img-footer">
+            <img class="img-footer" th:src="@{/img/LOGOSPORTAPP_01.1.png}">
+            </div>
+            <p class="footer-copy">&copy; 2022 EQ5, Inc</p>
+        </div>
+    </footer>
+
+</div>

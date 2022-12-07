@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    >
+    <link rel="stylesheet" href="../static/cargar_noticia.css">
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+        <div>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </div>
+        <section class="container-flex-usuario">
+            <div class="formulario-usuario">
+          <!-- RECIBE ERRORES -->
+          <div th:if="${error != null}" id="mensajeError"  class="card text-white bg-danger mb-3 mensajeError">
+            <div class="card-body">
+              <h5 class="card-title">ERROR</h5>
+              <p class="card-text" th:text="${error}"></p>
+            </div>
+          </div>
+          </div>
+     
+                <h2 class="titulo-seccion">ACTUALIZAR INFORMACIÓN</h2>
+                <form class="form"
+                      th:action="@{/perfil/__${session.usuarioActivo.id}__}"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      >
+                    <input hidden th:value="${id}" name="id">
+
+                    <div class="subtitulo">
+                        <label class="usuario-label">Nombre</label>
+                        <input
+                            type="text"
+                            class="titulo-input"
+                            name="nombre"
+                            placeholder="Ingrese su nombre"
+                            th:value="${session.usuarioActivo.nombre}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label for="disciplina" class="usuario-label">Disciplina</label>
+                        <select name="disciplina" class="titulo-input" th:value="${disciplina}">
+                            <option value="Carrera">Carrera</option>
+                            <option value="Lanzamiento">Lanzamiento</option>
+                            <option value="Salto">Salto</option>
+                        </select>
+                    </div>
+                    <div class="subtitulo">
+                        <label class="usuario-label">Mail</label>
+                        <input
+                            type="email"
+                            class="subtitulo-input"
+                            name="email"
+                            placeholder="Ingrese su mail"
+                            th:value="${session.usuarioActivo.email}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="usuario-label">Ingrese su contraseña</label>
+                        <input
+                            type="password"
+                            class="subtitulo-input"
+                            name="password"
+                            placeholder="Ingrese su contraseña"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="usuario-label">Repita su contraseña</label>
+                        <input
+                            type="password"
+                            class="subtitulo-input"
+                            name="password2"
+                            placeholder="Ingrese nuevamente su contraseña"
+                            />
+                    </div>
+
+                    <div class="subtitulo" id="archivo-user">
+                        <label class="usuario-label">Ingrese su nueva foto de perfil</label>
+                        <input type="file" class="input-archivo-usuario" name="imagen" />
+                    </div>
+
+                    <div class="btn-div">
+                        <button type="submit" class="btn" id="boton">
+                            ACTUALIZAR
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+.container-flex-entrenamiento{
+    height: calc(100% + 50px);
+    background-position: center;
+    background-size: cover;
+
+    background-image: url(https://soriatletismo.com/fotografias/politecnico1.jpg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+}
+.container-flex-entrenamiento::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+.formulario-entrenamiento{
+    width: 850px;
+    height: calc(100% + 70px);
+    margin: 20px;
+    /* border: solid 1px; */
+    background-color: rgba(145, 35, 35, 0.2);
+    border-radius:25px;
+}
+
+.titulo-seccion{
+    text-align: center;
+    font-weight: 700;
+}
+
+.etiqueta-label{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.disciplina{
+    justify-content: center;
+    margin-left: 20px;   
+}
+
+.categoria{
+    display: flex;
+    border-radius: 25px;
+    width: 90%;
+    height: 30px;
+    margin-left: 39px;
+    text-align: center;
+    color:#555;
+}
+
+.descripcion-entrenamiento{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 89%;
+    margin: auto;
+    border-radius: 25px;
+    color:#555;
+}
+
+.cuerpo-entrenamiento{
+    display: flex;
+    justify-content: space-around;
+    width: 89%;
+    margin: auto;
+    padding: 10px;
+    height: 200px;
+    border-radius: 25px;
+    text-align: center ;
+}
+
+.inicio-entrenamiento{
+    display: flex;
+    width: 25%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.btn-div{
+    display: flex;
+    justify-content:center;
+    padding: 15px;
+}
+
+#boton-entrenamiento{
+    border-radius:10px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color:#17447D;
+    color: #fff;
+    border: none;
+    margin: 10px;
+}
+
+#boton-entrenamiento:hover{
+    background-color: #062348;
+}
+

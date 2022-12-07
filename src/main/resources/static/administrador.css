@@ -1,0 +1,104 @@
+.container-flex-administrador {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://i.blogs.es/03ae0a/explainer-the-tech-beh/1366_2000.jpeg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.container-flex-administrador::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+.Titulo-administracion-Noticias,
+.Titulo-administracion-Entrenamientos,
+.Titulo-administracion-Usuarios {
+    color: #fff;
+    font-weight: 700;
+}
+
+#contenedor-administracion {
+    margin: 20px;
+}
+
+#contenedores-cards-usuarios {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #b8b9bb7b;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.parrafo-dashboard-usuarios,
+.parrafo-dashboard-noticias,
+.parrafo-dashboard-entrenamientos {
+    margin: 25px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+#contenedores-cards-noticias {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #55ba4882;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+#contenedores-cards-entrenamientos {
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #17437d78;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+#boton-dashboard-usuarios {
+    background-color: #17447D;
+    color: #fff;
+}
+
+#boton-dashboard-usuarios:hover {
+    background-color: #06254d;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+#boton-dashboard-noticias {
+    background-color: #17447D;
+    color: #fff;
+}
+
+#boton-dashboard-noticias:hover {
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    background-color: #06254d;
+}
+
+#boton-dashboard-entrenamientos {
+    background-color: #b8b9bb;
+    color: #17447D;
+
+}
+
+#boton-dashboard-entrenamientos:hover {
+    background-color: #646464;
+    color: #fff;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}

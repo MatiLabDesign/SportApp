@@ -1,0 +1,218 @@
+.container-lista-noticia{
+    height: calc(100% + 50px);
+    background-position: center;
+    background-size: cover;
+
+    background-image: url(http://www.elcivismo.com.ar/imagenes/fotos/57143.jpg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+
+    padding: 25px;
+
+    /* text-align: center; */
+}
+.container-lista-noticia::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+
+
+.card-noticia{
+    display: flex;
+    justify-content: center;
+    max-width: 750px;
+    background-color: rgba(224, 224, 224, 0.2);
+    border-radius:25px;
+}
+
+.titulo-card{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #17447D;
+}
+
+.subtitulo-card{
+    font-size: 15px;
+    text-align: center;
+    color: #717274;
+}
+
+.card-footer{
+    background-color: #fff;
+    text-align: center;
+    color: #b8b9bb;
+}
+
+.fecha-card{
+    font-size: 15px;
+    color: #717274;
+}
+
+.contenedor-imagen-card{
+    width: 100%;
+    text-align: center;
+}
+
+#imagen-cards{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+#imagen-notica-completa{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+#volver{
+    display: inline;
+    inline-box-align: last;
+}
+
+#volver button{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#modificar{
+    display: inline;
+    inline-box-align: last;
+}
+
+#modificar button{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.boton-editar-noticia, .boton-volver-noticia{
+    border-radius:10px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color:#17447D;
+    color: #fff;
+    border: none;
+}
+
+.fecha-noticia{
+    text-align: center;
+}
+
+.btn-sm{
+    margin: 10px 5px;
+    font-weight: 500;
+}
+
+#btn-ver, #btn-editar, #btn-eliminar{
+    background-color: #b8b9bb;
+    font-size: 12px;
+    border: none;
+}
+
+#btn-ver:hover{
+    background-color: #17447D;
+    color: #fff;
+}
+
+#btn-editar:hover{
+    background-color: #55ba48;
+    color: #fff;
+}
+
+#btn-eliminar:hover{
+    background-color: #ED5E68 ;
+    color: #fff;
+}
+
+#titulo-noticia-completa{
+    color: #17447D;
+}
+
+.subtitulo-noticia-completa{
+    color: #555;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.busqueda{
+    display: flex;
+    align-self:flex-end;
+    background-color: red;
+}
+
+.busqueda-vacia{
+    display: flex;
+    align-items: center;
+    height:50vh;
+    display: flex;
+    justify-content:  center;
+}
+
+#resultados-titulo{
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+
+#resultados-nulos{
+    font-size: 40px;
+    font-weight: 500;
+    
+}
+
+.titulo-seccion-noticias{
+    color: #55ba48;
+    font-size: 40px;
+    font-weight:700;
+}
+
+#bajada-noticias{
+    padding: 30px;
+}
+
+.container-noticias-listado{
+    width: calc(100% - 100px);
+}
+
+#titulo-card-noticia{
+
+}
+
+#subtitulo-card-noticia{
+    margin: 0;
+    font-size: 20px;
+}
+
+#titulo-card-entrenamiento{
+    color: #17447D;
+    font-size: 25px;
+}
+
+#subtitulo-card-entrenamiento{
+    margin: 0;
+    font-size: 15px;
+}

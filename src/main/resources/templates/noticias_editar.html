@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org" xmnls:sec="http://www.thymeleaf.org/extras/spring/spring-security">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+        <div>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </div>
+        <section class="container-flex-noticia">
+            <div class="formulario">
+                <div th:if="${error != null}" id="mensajeError"  class="card text-white bg-danger mb-3 mensajeError">
+                    <div class="card-body">
+                        <h5 class="card-title">ERROR</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <h2 class="titulo-seccion">EDITAR NOTICIA</h2>
+                <form
+                    th:action="@{/noticia/editar/__${noticia.id}__}"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    >
+
+                    <input hidden th:value="${id}" name="id" />
+
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Nuevo título</label>
+                        <input
+                            type="text"
+                            class="titulo-input"
+                            name="titulo"
+                            placeholder="Ingrese el nuevo titulo"
+                            th:value="${noticia.titulo}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Nuevo subtitulo</label>
+                        <input
+                            type="text"
+                            class="subtitulo-input"
+                            name="subtitulo"
+                            placeholder="Ingrese nuevo subtitulo"
+                            th:value="${noticia.subtitulo}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Nuevo cuerpo</label>
+                        <textarea
+                            name="cuerpo"
+                            class="cuerpo-noticia"
+                            placeholder="Ingrese el nuevo cuerpo"
+                            rows="8"
+                            th:text="${noticia.cuerpo}"
+                            ></textarea>
+                        <!-- <input
+                        type="text"
+                        class="cuerpo-noticia"
+                        name="subtitulo"
+                        placeholder="Ingrese nuevo subtitulo"
+                        th:value="${noticia.cuerpo}"
+                        /> -->
+                    </div>
+                    <div class="archivo">
+                        <label class="label-archivo">Imagen</label>
+                        <input type="file" class="input-archivo" name="imagen" />
+                    </div>
+                    <div class="btn-div">
+                        <button type="submit" class="btn" id="boton">
+                            GUARDAR
+                        </button>
+                    </div>
+                </form>
+        </section>
+
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

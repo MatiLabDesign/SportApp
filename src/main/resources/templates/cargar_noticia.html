@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    >
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+        <div>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </div>
+
+        <section class="container-flex-noticia">
+            <div class="formulario" >
+                <div th:if="${error != null}" id="mensajeError"  class="card text-white bg-danger mb-3 mensajeError">
+                    <div class="card-body">
+                        <h5 class="card-title">ERROR</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <h2 class="titulo-seccion">CARGAR NOTICIA</h2>
+                <form class="form"
+                      th:action="@{/noticia/guardada}"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      id="formu"
+                      >
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Titulo</label>
+                        <input
+                            type="text"
+                            class="subtitulo-input"
+                            name="titulo"
+                            placeholder="Ingrese titulo"
+                            th:value="${titulo}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Subtítulo</label>
+                        <input
+                            type="text"
+                            class="subtitulo-input"
+                            name="subtitulo"
+                            placeholder="Ingrese subtitulo"
+                            th:value="${subtitulo}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Cuerpo</label>
+                        <textarea
+                            style="resize: none"
+                            name="cuerpo"
+                            class="cuerpo-noticia"
+                            placeholder="Ingrese cuerpo"
+                            rows="8"
+                            th:text="${cuerpo}"
+                            ></textarea>
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Ingrese una imagen</label>
+                        <input type="file" class="subtitulo-input" name="imagen" />
+                    </div>
+                    <div class="btn-div">
+                        <button type="submit" class="btn" id="boton">
+                            SUBIR
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

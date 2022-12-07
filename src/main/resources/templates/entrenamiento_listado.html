@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+        <div>
+            <div>
+                <div>
+                    <div class="container-flex-entrenamiento-lista">
+                        <div class="container" id="landpage-entrenamiento">
+                            <div class="row row-cols-md-3 " id="contenedor-cards">
+                                <div class="col" th:each="entrenamiento : ${entrenamiento}">
+                                    <div class="card-group" th:switch="${entrenamiento.disciplina}"  > <!--th:switch="${entrenamiento.disciplina}"-->
+
+                                        <div  class="card" th:replace="/fragments/entrenamiento_card :: div" </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="/fragments/footer :: footer" </footer>
+    </body> </html>
+

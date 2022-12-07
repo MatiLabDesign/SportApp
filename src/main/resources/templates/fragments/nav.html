@@ -1,0 +1,146 @@
+<nav>
+    <div class="navbar-contenido">
+        <div class="container-grid">
+            <div class="logo">
+                <a href="/">
+                    <img
+                        class="imagen-nav"
+                        th:src="@{/img/LOGOSPORTAPP_01.png}"
+                        alt="SPORTAPP"
+                        width="70px"
+                        />
+                </a>
+            </div>
+            <div class="nav">
+                <ul class="menu" id="menu">
+                    <li class="menu-item"><a href="/" class="menu-link">Inicio</a></li>
+                    <li class="menu-item container-submenu">
+                        <a th:href="@{/noticia/listar}" class="menu-link submenu-btn"
+                           >Noticias<span th:if="${session.usuarioActivo != null}" sec:authorize="hasRole('ADMIN')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
+                            </span></a
+                        >
+                        <ul class="submenu">
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/noticia/cargar}"
+                                    sec:authorize="hasRole('ADMIN')"
+                                    class="menu-link"
+                                    >Crear</a
+                                >
+                            </li>
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/noticia/listar}"
+                                    sec:authorize="hasRole('ADMIN')"
+                                    class="menu-link"
+                                    >Ver</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item container-submenu">
+                        <a th:href="@{/entrenamiento/listar}" th:if="${session.usuarioActivo != null}" class="menu-link submenu-btn"
+                           >Entrenamientos<span th:if="${session.usuarioActivo != null}" sec:authorize="hasRole('ADMIN')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                                </svg>
+                            </span></a
+                        >
+                        <ul class="submenu">
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/entrenamiento/cargar}"
+                                    sec:authorize="hasRole('ADMIN')"
+                                    class="menu-link"
+                                    >Crear</a
+                                >
+                            </li>
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/entrenamiento/listar}"
+                                    sec:authorize="hasRole('ADMIN')"
+                                    class="menu-link"
+                                    >Ver</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a th:if="${session.usuarioActivo != null}"
+                                             th:href="@{/admin/dashboard}"
+                                             sec:authorize="hasRole('ADMIN')" class="menu-link">DashBoard</a></li>
+                </ul>
+            </div>
+            <div class="navbar-usuario">
+                <a
+                    class="registrar-btn regis-btn"
+                    th:href="@{/registrar}"
+                    th:if="${session.usuarioActivo == null}"
+                    >Registrarme</a
+                >
+                <a
+                    class="registrar-btn ingresar-btn"
+                    th:href="@{/login}"
+                    th:if="${session.usuarioActivo == null}"
+                    >Ingresar</a
+                >
+                <ul class="menu menu-usuario" id="menu">
+                    <img 
+                        width="40px"
+                        height="40px"
+                        class="foto-usuario"
+                        th:if="${session.usuarioActivo != null}"
+                        th:src="@{/imagen/perfil/__${session.usuarioActivo.id}__}"
+                        alt="Foto Usuario"
+                        />
+                    <li class="menu-item container-submenu2">
+                        <a th:if="${session.usuarioActivo != null}" href="#" class="menu-link submenu-btn"
+                           ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                class="navbar-avatar-icono"
+                                viewBox="0 0 16 16"
+                                >
+                                <path
+                                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z"
+                                    /></svg
+                            ></a>
+                        <ul class="submenu">
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/perfil}"
+                                    class="menu-link"
+                                    >Ver Perfil</a
+                                >
+                            </li>
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    th:href="@{/perfil}"
+                                    class="menu-link"
+                                    >Editar Perfil</a
+                                >
+                            </li>
+                            <li class="menu-item">
+                                <a
+                                    th:if="${session.usuarioActivo != null}"
+                                    href="/logout"
+                                    class="menu-link"
+                                    >Cerrar Sesión</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

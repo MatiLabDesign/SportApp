@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace= "/fragments/head :: head" </head>
+    <body>
+
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+
+        <br>
+        <!-- Mensajes -->
+        <div id="mensajes">
+            <div class="container">
+                <div th:if="${error!=null}" class="card text-white bg-danger mb-3 mensajeError" >
+                    <div class="card-body">
+                        <h5 class="card-tittle">ERROR</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+
+                <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                    <div class="card-body">
+                        <h5 class="card-tittle">EXITO</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+
+        <div class="container">
+            <div id="volver">
+                <a href="javascript:history.back()">
+                    <button type=" button" class="boton-volver-noticia" id="button-ingresa-index">
+                        Volver Atrás
+                    </button>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-body" id="noticia-completa">
+                    <img th:src="@{/imagen/noticia/__${noticia.id}__}"  class="card-img-bottom" id="imagen-notica-completa" th:alt="@{/imagen/noticia/__${noticia.id}__}">
+                    <hr>
+                    <h5 class="card-title text-center fw-bold fs-1" th:text="${noticia.titulo}" id="titulo-noticia-completa"></h5>
+                    <br>
+                    <h6 class="subtitulo-noticia-completa" th:text="${noticia.subtitulo}" ></h6>
+                    <br>
+                    <p class="card-text lh-lg text-justify ps-3 pe-3 mb-5" th:text="${noticia.cuerpo}"></p>
+                    <hr>
+                    <p class="fecha-noticia"><small class="text-muted" th:text="${noticia.fechaPublicacion}"></small></p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <br>  
+
+        <br>  
+
+        <!-- Footer -->
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+
+    </body>
+</html>

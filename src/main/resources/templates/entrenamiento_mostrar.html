@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+
+    </body>
+
+</html>
+
+<body>
+    <header>
+        <nav th:replace= "/fragments/nav :: nav" </nav>
+    </header>
+
+    <!-- Mensajes -->
+    <div id="mensajes">
+        <div class="container">
+            <div th:if="${error!=null}" class="card text-white bg-danger mb-3 mensajeError">
+                <div class="card-body">
+                    <h5 class="card-tittle">ERROR</h5>
+                    <p class="card-text" th:text="${error}"></p>
+                </div>
+            </div>
+
+            <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito">
+                <div class="card-body">
+                    <h5 class="card-tittle">EXITO</h5>
+                    <p class="card-text" th:text="${exito}"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container p-3">
+        <div id="volver">
+            <a href="javascript:history.back()">
+                <button type=" button" class="boton-volver-entrenamiento" id="button-ingresa-index">
+                    Volver Atras
+                </button>
+            </a>
+        </div>
+        <div class="card">
+            <div class="card-body" id="entrenamiento-completo">
+
+                <hr>
+                <h5 class="card-title text-center fw-bold fs-1" th:text="${entrenamiento.disciplina}"></h5>
+                <br>
+                <h6 style="font-size: 25px; font-weight: bold; text-align: center "
+                    th:text="${entrenamiento.descripcion}">
+                </h6>
+                <br>
+                <p class="card-text lh-lg text-justify ps-3 pe-3 mb-5" th:text="${entrenamiento.rutina}"></p>
+                <hr>
+                <p class="text-center">
+                    <small class="fecha-card" th:text="${entrenamiento.fechaInicio}"></small>
+                    <small>/</small>
+                    <small class="fecha-card" th:text="${entrenamiento.fechaFin}"></small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace= "/fragments/footer :: footer" </footer>
+             
+</body>
+
+</html>

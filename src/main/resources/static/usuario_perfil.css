@@ -1,0 +1,122 @@
+.container-flex-perfil {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://sportsmatik.com/uploads/matik-sports-corner/matik-know-how/athletics_1492783927_13782.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.container-flex-perfil::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, #17447D, #004d7adb, #17447D);
+    z-index: -1;
+}
+
+#contenedor-contenido {
+    padding: 30px;
+}
+
+.contenido-perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-perfil {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.card-perfil-body {
+    padding: 20px;
+}
+
+.contenido-body {
+    display: flex;
+    color: #55ba48;
+}
+
+.contenido-imagen-pefil {
+    flex-shrink: 2;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+}
+
+.img-fluid {
+    width: 220px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#imagen-perfil-usuario{
+    display: flex;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.contenedor-informacion-perfil {
+    flex-grow: 1;
+    margin: 0px 50px;
+
+
+}
+
+#correo-perfil {
+    color: #e6e7e8;
+}
+
+.nombre-usuario {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.datos-usuario-perfil {
+    color: #fff;
+}
+
+#disciplina-perfil {
+    color: #55ba48;
+}
+
+
+
+#codigo-perfil {
+    color: #b8b9bb;
+}
+
+#id-perfil {
+    font-size: 12px;
+    color: #e6e7e8;
+}
+
+.contenedor-boton-perfil {
+    display: flex;
+}
+
+#boton-perfil-editar {
+    background-color: #17447D;
+    flex-grow: 1;
+    margin: 5px;
+    color: #fff;
+}
+
+#boton-perfil-editar:hover {
+    background-color: #06254d;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}

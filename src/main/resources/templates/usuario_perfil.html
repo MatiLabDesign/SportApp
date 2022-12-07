@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+
+        <header>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </header>
+        <section class="container-flex-perfil">
+            <div class="container" id="contenedor-contenido">
+                <div class="contenido-perfil">
+                    <div class="card-perfil">
+                        <div class="card-perfil-body">
+                            <div class="contenido-body">
+                                <div class="contenido-imagen-perfil">
+                                    <img th:src="@{/imagen/usuario/__${usuario.id}__}" 
+                                         th:alt="@{/imagen/usuario/__${usuario.id}__}"
+                                         class="img-fluid"
+                                         id="imagen-perfil-usuario"
+                                         />
+                                </div>
+                                <div class="contenedor-informacion-perfil">
+                                    <h5 class="nombre-usuario" th:text="${usuario.nombre}"></h5>
+                                    <p class="datos-usuario-perfil" id="disciplina-perfil" th:text="${usuario.mail}">
+
+                                    </p>
+                                    <p class="datos-usuario-perfil" id="correo-perfil" th:text="${usuario.disciplina}">
+
+                                    </p>
+                                    <span id="codigo-perfil">Código de usuario: </span>
+                                    <p class="datos-usuario-perfil" id="id-perfil" th:text="${usuario.id}">>
+
+                                    </p>
+                                    <div class="contenedor-boton-perfil">
+                                        <button type="button" id="boton-perfil-editar" class="btn">
+                                            Editar Perfil
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+/* #col-entrenamiento_card{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card-group{
+    width: 400px;
+    background-color: #000;
+    position: relative;
+    
+
+}*/
+
+.card{
+    margin: 0 50px;
+    flex-wrap: wrap;
+    display: flex;
+    width: 1200px;
+    
+} 

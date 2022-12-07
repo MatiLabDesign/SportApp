@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    >
+    <link rel="stylesheet" href="/login.css">
+    <head th:replace= "/fragments/head :: head" </head>
+
+    <body>
+        <div>
+            <nav th:replace= "/fragments/nav :: nav" </nav>
+        </div>
+        <div class="container-flex-login">
+            <div class="formulario-login">
+                <div th:if="${error != null}" id="mensajeError"  class="card text-white bg-danger mb-3 mensajeError">
+                    <div class="card-body">
+                        <h5 class="card-title">ERROR</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+                <h2 class="titulo-seccion">INGRESÁ</h2>
+                <form class="form"
+                      th:action="@{/logincheck}"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      >
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Correo electrónico</label>
+                        <input
+                            type="e-mail"
+                            class="subtitulo-input-login"
+                            name="email"
+                            placeholder="Ingrese e-mail"
+                            th:value="${email}"
+                            />
+                    </div>
+                    <div class="subtitulo">
+                        <label class="subtitulo-label">Contraseña</label>
+                        <input
+                            type="password"
+                            class="subtitulo-input-login"
+                            name="password"
+                            placeholder="Ingrese contraseña"
+                            th:value="${password}"
+                            />
+                    </div>
+
+
+                    <div class="btn-div">
+                        <button type="submit" class="btn" id="boton">
+                            INGRESAR
+                        </button>
+                    </div>
+                </form>
+                <div class="link-formulario">
+                    ¿Sos nuevo? <a class="link-formulario" th:href="@{/registrar}">Registrate</a>
+                </div>
+            </div>
+        </div>
+        <footer th:replace= "/fragments/footer :: footer" </footer>
+    </body>
+</html>
